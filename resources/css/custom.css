@@ -1,0 +1,13 @@
+/* 
+    Created on : 07.01.2017, 17:54:05
+    Author     : gulkin-nos
+*/
+a.currentPage{
+    color: #d43f3a;
+}
+li.menuItem{
+    padding: 0 1rem;
+}
+li.menuItem.horizontal{
+    display:inline;
+}
