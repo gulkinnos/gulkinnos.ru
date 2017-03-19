@@ -1,11 +1,9 @@
 <?php
-use App as App;
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 require_once './App/Classes/App.php';
-$app = App::getInstance();
-$app->getDB();
-die(var_dump($app));
+$app=  App::getInstance();
+
 if (isset($_GET['route'])) {
     $appRoute = trim(strip_tags($_GET['route']));
 } else {
@@ -20,6 +18,8 @@ if ($appRoute !== '') {
     }
 } else {
     $headTitle = 'Проект gulkinnos.ru';
+    $headMetaDescription = 'Открытый проект для помощи начинающим разработчикам и самому себе';
+
     include $_SERVER['DOCUMENT_ROOT'] . '/templates/commonFrame.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/templates/mainPage.php';
 }

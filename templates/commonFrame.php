@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Открытый проект для помощи начинающим разработчикам и самому себе">
+    <meta name="description" content="<?= $headMetaDescription ?>">
     <title><?= $headTitle ?></title>
     <link rel="shortcut icon" href="/favicon.ico"/>
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">

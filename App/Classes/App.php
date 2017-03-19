@@ -14,7 +14,10 @@ class App {
     function __construct() {
         
     }
-
+/**
+ * 
+ * @return \App
+ */
     public static function getInstance() {
         if (self::$_instance === null) {
             self::$_instance = new self;
