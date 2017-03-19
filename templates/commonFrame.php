@@ -12,10 +12,35 @@
 </head>
 
 <body>
-    Это общая страница проекта. Тут будет меню, хедер, футер, форма авторизации и прочая лабуда<br>
-    <a href="/">На главную</a>
-    <a href="/aboutProject">О проекте</a>
-    
-</body>
-<?php
+    <div class="top-menu-block row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid"> 
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav">
+                        <?php
+                        if (isset($config['mainMenu']) && is_array($config['mainMenu'])) {
+                            foreach ($config['mainMenu'] as $itemName => $itemURL) {
+                                ?>
+                                <li <?php
+                                if (($appRoute . '/') == $itemURL || ($appRoute) == $itemURL) {
+                                    echo 'class="active"';
+                                }
+                                ?>
+                                    >
+                                    <a href="/<?= $itemURL ?>"><?= $itemName ?></a></li>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        Это общая страница проекта. Тут будет меню, хедер, футер, форма авторизации и прочая лабуда<br>
+        <a href="/">На главную</a>
+        <a href="/aboutProject/">О проекте</a>
+    </div>
 
+</body>

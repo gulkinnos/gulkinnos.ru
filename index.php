@@ -3,9 +3,10 @@ header('Content-Type: text/html; charset=utf-8');
 session_start();
 require_once './App/Classes/App.php';
 $app=  App::getInstance();
-
+$config=$app->getConfig();
 if (isset($_GET['route'])) {
     $appRoute = trim(strip_tags($_GET['route']));
+    $appRoute= preg_replace('/\//', '', $appRoute);
 } else {
     $appRoute = '';
 }
