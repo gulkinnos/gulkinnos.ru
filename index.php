@@ -1,12 +1,22 @@
 <?php
+
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 require_once './App/Classes/App.php';
-$app=  App::getInstance();
-$config=$app->getConfig();
+if ($_SERVER['SERVER_NAME'] == 'moto-drive-us.com') {
+    header("HTTP/1.0 404 Not Found");
+    die('Ошибка DNS');
+}
+
+$app = App::getInstance();
+$config = $app->getConfig();
+
+$visitors=new Visitors();
+$visitors->writeLog();
+
 if (isset($_GET['route'])) {
     $appRoute = trim(strip_tags($_GET['route']));
-    $appRoute= preg_replace('/\//', '', $appRoute);
+    $appRoute = preg_replace('/\//', '', $appRoute);
 } else {
     $appRoute = '';
 }
