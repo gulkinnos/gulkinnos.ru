@@ -14,5 +14,8 @@ return $config = array(
         'История проекта и разработчиков' => 'history/',
         'Основные темы' => 'mainSubjects/',
         'Заметки' => 'devNotes/'
+    ),
+    'developers' => array(
+        'gulkinnos@gmail.com'
     )
 );
