@@ -7,7 +7,7 @@ require_once './App/Classes/App.php';
 $app = App::getInstance();
 $config = $app->getConfig();
 //die(var_dump($_SERVER));
-$visitors=new Visitors();
+$visitors = new Visitors();
 $visitors->writeLog();
 if ($_SERVER['SERVER_NAME'] == 'moto-drive-us.com') {
     header("HTTP/1.0 404 Not Found");

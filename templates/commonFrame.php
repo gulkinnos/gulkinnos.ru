@@ -23,11 +23,17 @@
                                 ?>
                                 <li <?php
                                 if (($appRoute . '/') == $itemURL || ($appRoute) == $itemURL) {
-                                    echo 'class="active"';
-                                }
-                                ?>
-                                    >
-                                    <a href="/<?= $itemURL ?>"><?= $itemName ?></a></li>
+                                    ?>class="active">
+                                        <a><?= $itemName ?></a>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        >
+                                        <a href="/<?= $itemURL ?>"><?= $itemName ?></a>
+                                        <?php
+                                    }
+                                    ?>
+                                </li>
                                 <?php
                             }
                         }
@@ -37,10 +43,6 @@
             </div>
         </nav>
     </div>
-    <div class="row">
-        Это общая страница проекта. Тут будет меню, хедер, футер, форма авторизации и прочая лабуда<br>
-        <a href="/">На главную</a>
-        <a href="/aboutProject/">О проекте</a>
-    </div>
+
 
 </body>

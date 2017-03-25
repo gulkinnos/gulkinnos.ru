@@ -26,12 +26,12 @@ class Visitors {
                 `HTTP_USER_AGENT`
                 )
             VALUES
-               ("' . $dbc->real_escape_string((isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'--'). '",
-                "' . $dbc->real_escape_string((isset($_SERVER['REMOTE_ADDR']))?$_SERVER['REMOTE_ADDR']:'--') . '",
+               ("' . $dbc->real_escape_string((isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : '--') . '",
+                "' . $dbc->real_escape_string((isset($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : '--') . '",
                 CURRENT_TIMESTAMP,
-                "' . $dbc->real_escape_string((isset($_SERVER['REQUEST_URI']))?$_SERVER['REQUEST_URI']:'--') . '",
+                "' . $dbc->real_escape_string((isset($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '--') . '",
                 "' . $dbc->real_escape_string(serialize($_SERVER)) . '",
-                "' .  $dbc->real_escape_string((isset($_SERVER['HTTP_USER_AGENT']))?$_SERVER['HTTP_USER_AGENT']:'--'). '"
+                "' . $dbc->real_escape_string((isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '--') . '"
                     );
             ';
         $dbc->query($sql);
