@@ -14,14 +14,15 @@ class App {
     function __construct() {
         
     }
-/**
- * 
- * @return \App
- */
+    /**
+     * 
+     * @return \App
+     */
     public static function getInstance() {
         if (self::$_instance === null) {
             self::$_instance = new self;
             self::$config = self::getConfig();
+            include_once './App/Classes/Visitors.php';
             header('Content-Type: text/html; charset=utf-8');
         }
         return self::$_instance;
@@ -41,6 +42,7 @@ class App {
      * @todo Заменить на нормальный метод, добавить проверок, что подключения ещё нет, что нет ошибок, что пришёл нормальный конфиг.
      * 
      * @param array $configArray -конфиг целиком.
+     * @return \mysqli
      */
     public function getDB() {
         if (is_null($this->db)) {
