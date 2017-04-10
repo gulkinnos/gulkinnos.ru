@@ -1,0 +1,10 @@
+User-agent: Yandex
+Disallow: /
+Allow: /$
+Allow: /sitemap.xml$
+Allow: /aboutProject
+Allow: /aboutAuthors
+Allow: /history
+Allow: /howToJoin
+Host: gulkinnos.ru
+sitemap: http://gulkinnos.ru/sitemap.xml
